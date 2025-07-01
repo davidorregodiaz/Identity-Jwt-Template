@@ -1,17 +1,14 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using Application.Interfaces.Services;
 using Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using Shared;
 using Shared.Dtos;
 using Shared.Utilities;
 
-namespace Infraestructure.Services;
+namespace Infraestructure.Services.Auth;
 
 public class AuthService : IAuthService
 {

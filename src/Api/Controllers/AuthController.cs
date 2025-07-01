@@ -75,6 +75,13 @@ public class AuthController : ControllerBase
             expires = tokenDto.ExpiresIn
         });
     }
+
+    [HttpPost("logout")]
+    public IResult Logout()
+    {
+        Response.Cookies.Delete("refresh_token");
+        return Results.Ok("Logged out");
+    }
     
     private void SetRefreshTokenCookie(string token)
     {

@@ -12,7 +12,7 @@ using Shared;
 using Shared.Dtos;
 using Shared.Utilities;
 
-namespace Infraestructure.Services;
+namespace Infraestructure.Services.Auth;
 
 public class TokenService
 {

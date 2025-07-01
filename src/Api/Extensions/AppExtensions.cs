@@ -3,6 +3,8 @@ using Application.Interfaces.Services;
 using Core.Models;
 using Infraestructure.Context;
 using Infraestructure.Services;
+using Infraestructure.Services.Auth;
+using Infraestructure.Services.BackgroundServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Identity;
@@ -63,7 +65,11 @@ public static class AppExtensions
             options.Secure = CookieSecurePolicy.SameAsRequest;
         });
 
+        //AppServices
         builder.Services.AddScoped<IAuthService, AuthService>();
         builder.Services.AddScoped<TokenService>();
+        
+        //Background Tasks
+        builder.Services.AddHostedService<RefreshTokenCleanup>();
     }
 }

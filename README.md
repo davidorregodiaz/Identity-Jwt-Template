@@ -49,7 +49,7 @@ tests/                 # Pruebas unitarias y de integración
    ```
 
 3. Configurar conexión en `appsettings.json`:
-   ```json
+   ```json,
    "ConnectionStrings": {
      "DefaultConnection": "Host=localhost;Port=5432;Database=myapp;Username=postgres;Password=mysecretpassword;"
    }
